@@ -1,0 +1,30 @@
+version: '2.0'
+networks:
+  default:
+
+volumes:
+  cache-data:
+
+services:
+  squid:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+# choice network type
+        - TC_TYPE=4g
+#        - TC_TYPE=4g-limit
+#        - TC_TYPE=3g
+#        - TC_TYPE=modem-56k
+#        - TC_TYPE=wifi-a
+#        - TC_TYPE=wifi-b
+#        - TC_TYPE=wifi-g
+#        - TC_TYPE=wifi-n
+#        - TC_TYPE=terrible
+#        - TC_TYPE=none
+    ports:
+      - '3128:3128'
+    volumes:
+      - cache-data:/var/cache
+    privileged: true
+    restart: always
