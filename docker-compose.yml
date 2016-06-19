@@ -12,9 +12,9 @@ services:
       dockerfile: Dockerfile
       args:
 # choice network type
-        - TC_TYPE=4g
+#        - TC_TYPE=4g
 #        - TC_TYPE=4g-limit
-#        - TC_TYPE=3g
+        - TC_TYPE=3g
 #        - TC_TYPE=modem-56k
 #        - TC_TYPE=wifi-a
 #        - TC_TYPE=wifi-b
