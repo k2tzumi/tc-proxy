@@ -27,6 +27,7 @@ Change build args. Choice network type.
 Create tc command shell.  
 See reference.  
 `tc/terrible.sh`
+
 4. Dockerfile build.  
 `docker-compose build`
 
