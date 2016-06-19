@@ -22,19 +22,19 @@ Change build args. Choice network type.
       args:
 # choice network type
         - TC_TYPE=(4g|4g-limit|3g|modem-56k|wifi-a|wifi-b|wifi-g|wifi-n|terrible|none)
-```
+```  
  - Other Settings.  
 Create tc command shell.  
 See reference.  
 `tc/terrible.sh`
 
-4. Dockerfile build.  
+5. Dockerfile build.  
 `docker-compose build`
 
-5. Run  
+6. Run  
 `docker-compose up`
 
-6. use proxy 
+7. use proxy 
 ``` bash
 $ export http_proxy="http://`docker-machine ip`:3128"
 $ export https_proxy="http://`docker-machine ip`:3128"
