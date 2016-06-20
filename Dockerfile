@@ -27,7 +27,7 @@ RUN	true && \
 	squid -z && \
 	true
 
-ARG TC_TYPE=${TC_TYPE:-none}
+ARG TC_TYPE=${TC_TYPE:-4g}
 COPY tc/${TC_TYPE}.sh /tc.sh
 COPY entrypoint.sh /
 
