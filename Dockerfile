@@ -15,15 +15,22 @@ RUN	true && \
 	touch /var/log/squid/access.log && \
 	chown -R squid:squid /var/log/squid/ && \
 	chown squid:squid /var/run/squid && \
-	echo "cache_dir ufs /var/cache/squid 600 16 256" >> /etc/squid/squid.conf && \
+	echo "acl NOCACHE src all" >> /etc/squid/squid.conf && \
+	echo "cache deny NOCACHE" >> /etc/squid/squid.conf && \
+	# need ./configure --enable-storeio=null,ufs
+	#echo "cache_dir null /dev/null" >> /etc/squid/squid.conf && \
+	echo "cache_mem 0 MB" >> /etc/squid/squid.conf && \
+	echo "maximum_object_size 0 KB" >> /etc/squid/squid.conf && \
+	echo "cache_store_log none" >> /etc/squid/squid.conf && \
 	echo "visible_hostname localhost" >> /etc/squid/squid.conf && \
 	echo "forwarded_for off" >> /etc/squid/squid.conf && \
 	echo "request_header_access Referer deny all" >> /etc/squid/squid.conf && \
 	echo "request_header_access X-Forwarded-For deny all" >> /etc/squid/squid.conf && \
 	echo "request_header_access Via deny all" >> /etc/squid/squid.conf && \
 	echo "request_header_access Cache-Control deny all" >> /etc/squid/squid.conf && \
-	echo "access_log stdio:/var/log/squid/access.log" >> /etc/squid/squid.conf && \
-	echo "cache_mem 0 MB" >> /etc/squid/squid.conf && \
+	echo "access_log stdio:/var/log/squid/access.log common" >> /etc/squid/squid.conf && \
+	echo "strip_query_terms off" >> /etc/squid/squid.conf && \
+	squid -k parse && \
 	squid -z && \
 	true
 
