@@ -22,11 +22,12 @@ Change build args. Choice network type.
       args:
 # choice network type
         - TC_TYPE=(4g|4g-limit|3g|modem-56k|wifi-a|wifi-b|wifi-g|wifi-n|terrible|none)
-```  
+```
  - Other Settings.  
 Create tc command shell.  
 See reference.  
 `tc/terrible.sh`
+
 5. Dockerfile build.  
 `docker-compose build`
 
