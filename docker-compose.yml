@@ -11,7 +11,7 @@ services:
       context: .
       dockerfile: Dockerfile
       args:
-# choice network type
+# choose network type
         - TC_TYPE=4g
 #        - TC_TYPE=4g-limit
 #        - TC_TYPE=3g

@@ -17,10 +17,10 @@ This repository contains **Dockerfile**.
 `git clone https://github.com/k2tzumi/tc-proxy.git`
 
 4. Change docker-compose.yml  
-Change build args. Choice network type.
+Change build args. Choose network type.
 ``` yml
       args:
-# choice network type
+# choose network type
         - TC_TYPE=(4g|4g-limit|3g|modem-56k|wifi-a|wifi-b|wifi-g|wifi-n|terrible|none)
 ```
  - Other Settings.  
